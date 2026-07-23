@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "pinia": "^4.0.2",
     "vue": "^3.4.21",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue": "^5.2.4",
     "vite": "^5.2.8"
   }
 }
