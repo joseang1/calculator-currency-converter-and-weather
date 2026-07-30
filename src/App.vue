@@ -3,4 +3,5 @@
 </script>
 <template>
     <Header />
+    <RouterView />
 </template>
