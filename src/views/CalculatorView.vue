@@ -8,11 +8,18 @@
     const waitingForNewValue = ref(null)
 
     function pressNumber(num) {
-        
+        if (errorMessage.value) resetAll()
+
+        if (waitingForNewValue.value) {
+            display.value = String(num)
+            waitingForNewValue = false
+        } else {
+            display.value = display.value === '0' ? String(num) : display.value + num
+        }
     }
 
     function pressDecimal() {
-
+       
     }
 
     function pressOperator(op) {
