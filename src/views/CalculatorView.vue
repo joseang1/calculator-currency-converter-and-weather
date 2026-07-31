@@ -94,7 +94,8 @@
     }
 
     function showError(message) {
-
+        errorMessage.value = message
+        display.value = message
     }
 
     function resetAll() {
@@ -109,34 +110,44 @@
 
 <template>
     <div class="container d-flex justify-content-center mt-5">
-        <div class="card shadow-lg" style="max-width: 360px; widt%;">
+        <div class="card shadow-lg" style="max-width: 360px; width: 100%;">
             <div class="card-body bg-dark text-white rounded">
                 <div class="bg-black text-white text-end p-3 mb-3 rounded fs-2 text-truncate">
                     {{ display }}
                 </div>
 
                 <div class="calc-grid">
+                    <!-- Top row - Buttons -->
                     <button class="btn btn-danger" @click="resetAll">CE</button>
-                    <button class="btn btn-secondary" @click="pressOperator('/')">/</button>
-                    <button class="btn btn-secondary" @click="pressOperator('*')">*</button>
-                    <button class="btn btn-secondary" @click="pressOperator('-')">-</button>
+                    <button class="btn btn-info" @click="pressMemoryAdd">M+</button>
+                    <button class="btn btn-info" @click="pressMemoryRecall">MR</button>
+                    <button class="btn btn-info" @click="pressMemoryClear">MC</button>
                     
+                    <!-- Second row - 7 to / -->
                     <button class="btn btn-outline-light" @click="pressNumber(7)">7</button>
                     <button class="btn btn-outline-light" @click="pressNumber(8)">8</button>
                     <button class="btn btn-outline-light" @click="pressNumber(9)">9</button>
-                    <button class="btn btn-warning plus-btn" @click="pressOperator('+')">+</button>
+                    <button class="btn btn-warning plus-btn" @click="pressOperator('/')">/</button>
 
+                    <!-- Third row - 4 to * -->
                     <button class="btn btn-outline-light" @click="pressNumber(4)">4</button>
                     <button class="btn btn-outline-light" @click="pressNumber(5)">5</button>
                     <button class="btn btn-outline-light" @click="pressNumber(6)">6</button>
+                    <button class="btn btn-warning" @click="pressOperator('*')">*</button>
 
+                    <!-- Fourth row - 3 to - -->
                     <button class="btn btn-outline-light" @click="pressNumber(3)">3</button>
                     <button class="btn btn-outline-light" @click="pressNumber(2)">2</button>
                     <button class="btn btn-outline-light" @click="pressNumber(1)">1</button>
-                    <button class="btn btn-warning equals-btn" @click="pressEquals">=</button>
+                    <button class="btn btn-warning" @click="pressOperator('-')">-</button>
 
+                    <!-- Fifth row - 0 to +-->
                     <button class="btn btn-outline-light zero-btn" @click="pressNumber(0)">0</button>
                     <button class="btn btn-outline-light" @click="pressDecimal">.</button>
+                    <button class="btn btn-warning" @click="pressOperator('+')">+</button>
+
+                    <!-- Last row - = -->
+                    <button class="btn btn-warning equals-btn" @click="pressEquals">=</button>
                 </div>  
             </div>
 
@@ -158,12 +169,8 @@
         height: 100%;
     }
 
-    .plus-btn {
-        grid-row: span 2;
-    }
-
     .equals-btn {
-        grid-row: span 2;
+        grid-column: span 4;
     }
 
     .zero-btn {
