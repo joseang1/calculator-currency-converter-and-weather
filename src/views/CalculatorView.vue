@@ -115,6 +115,11 @@
         waitingForNewValue.value = true
     }
 
+    function pressMemoryRecall() {
+        display.value = String(memoryStore.value)
+        waitingForNewValue.value = true
+    }
+
 </script>
 
 <template>
