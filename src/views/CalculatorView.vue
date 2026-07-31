@@ -120,6 +120,10 @@
         waitingForNewValue.value = true
     }
 
+    function pressMemoryClear() {
+        memoryStore.clearMemory()
+    }
+
 </script>
 
 <template>
