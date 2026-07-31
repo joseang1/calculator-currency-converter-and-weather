@@ -1,5 +1,8 @@
 <script setup>
     import { ref } from 'vue'
+    import { useMemoryStore } from '../stores/memory.js'
+
+    const memoryStore = useMemoryStore()
 
     const display = ref('0')
     const previousValue = ref(null)
@@ -104,8 +107,14 @@
         previousValue.value = null
         currentOperator.value = null
         errorMessage.value = null
-        waitingForNewValues.value = null
+        waitingForNewValue.value = null
     }
+
+    function pressMemoryAdd() {
+        memoryStore.setMemory(parseFloat(display.value))
+        waitingForNewValue.value = true
+    }
+
 </script>
 
 <template>
