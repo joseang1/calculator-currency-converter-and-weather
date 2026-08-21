@@ -52,11 +52,6 @@
         </RouterLink>
       </li>
       <li class="nav-item">
-        <RouterLink class="nav-link py-3" to="/currency" data-bs-toggle="collapse" data-bs-target="#navMenuMobile">
-          Currency
-        </RouterLink>
-      </li>
-      <li class="nav-item">
         <RouterLink class="nav-link py-3" to="/weather" data-bs-toggle="collapse" data-bs-target="#navMenuMobile">
           Weather
         </RouterLink>
@@ -84,9 +79,6 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <RouterLink class="nav-link" to="/" data-bs-dismiss="offcanvas">Calculator</RouterLink>
-        </li>
-        <li class="nav-item">
-          <RouterLink class="nav-link" to="/currency" data-bs-dismiss="offcanvas">Currency</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" to="/weather" data-bs-dismiss="offcanvas">Weather</RouterLink>
