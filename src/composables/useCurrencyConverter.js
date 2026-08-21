@@ -1,10 +1,10 @@
 import { ref } from 'vue'
-    import { fetchRates } from '../services/currencyApi'
+import { fetchRates } from '../services/currencyApi'
 
     export function useCurrencyConverter() {
         const rates = ref(null)
         const loading = ref(null)
-        const error = refu(null)
+        const error = ref(null)
 
         async function loadRates() {
             loading.value = true
