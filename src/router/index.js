@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CalculatorView from '../views/CalculatorView.vue'
+import WeatherView from '../views/WeatherView.vue'
 
 const routes = [
     {
@@ -7,6 +8,11 @@ const routes = [
         name: 'calculator',
         component: CalculatorView
     },
+    {
+        path: '/weather',
+        name: 'weather',
+        component: WeatherView
+    }
 ]
 
 const router = createRouter({

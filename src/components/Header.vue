@@ -1,11 +1,25 @@
 <script setup>
+
+  import { Offcanvas, Collapse } from 'bootstrap'
+
+  function closeMobileMenu() {
+    const el = document.getElementById('navMenuMobile')
+    const instance = Collapse.getInstance(el)
+    instance?.hide()
+  }
+
+  function closeOffcanvas() {
+    const el = document.getElementById('sidebarMenu')
+    const instance = Offcanvas.getInstance(el)
+    instance?.hide()
+  }
+
 </script>
 
 <template>
   <nav class="navbar sticky-top bg-body-tertiary shadow-sm">
     <div class="container-fluid position-relative">
 
-      <!-- MOBILE: centered burger, opens full-width collapse panel -->
       <div class="d-md-none d-flex justify-content-center w-100">
         <button
           class="navbar-toggler custom-toggler collapsed"
@@ -22,7 +36,6 @@
         </button>
       </div>
 
-      <!-- DESKTOP: burger on the left + title, opens sidebar -->
       <div class="d-none d-md-flex align-items-center w-100">
         <button
           class="navbar-toggler custom-toggler collapsed"
@@ -43,23 +56,21 @@
     </div>
   </nav>
 
-  <!-- MOBILE: full-width collapse panel -->
   <div class="collapse d-md-none" id="navMenuMobile">
     <ul class="nav flex-column text-center bg-body-tertiary border-top">
       <li class="nav-item">
-        <RouterLink class="nav-link py-3" to="/" data-bs-toggle="collapse" data-bs-target="#navMenuMobile">
+        <RouterLink class="nav-link py-3" to="/" @click="closeMobileMenu">
           Calculator
         </RouterLink>
       </li>
       <li class="nav-item">
-        <RouterLink class="nav-link py-3" to="/weather" data-bs-toggle="collapse" data-bs-target="#navMenuMobile">
+        <RouterLink class="nav-link py-3" to="/weather" @click="closeMobileMenu">
           Weather
         </RouterLink>
       </li>
     </ul>
   </div>
 
-  <!-- DESKTOP: offcanvas sidebar -->
   <div
     class="offcanvas offcanvas-start"
     tabindex="-1"
@@ -78,10 +89,10 @@
     <div class="offcanvas-body">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/" data-bs-dismiss="offcanvas">Calculator</RouterLink>
+          <RouterLink class="nav-link" to="/" @click="closeOffcanvas">Calculator</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/weather" data-bs-dismiss="offcanvas">Weather</RouterLink>
+          <RouterLink class="nav-link" to="/weather" @click="closeOffCanvas">Weather</RouterLink>
         </li>
       </ul>
     </div>
