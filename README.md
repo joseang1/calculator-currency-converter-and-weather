@@ -32,6 +32,7 @@ Este proyecto se ha desarrollado con las siguientes tecnologías:
     - M+ para poner en memoria el número actual. Se habrá de usar Pinia para almacenar la información
     - MR para recuperar el número en memoria
     - MC para borrar los datos guardados en memoria
+
 ### Desarrollo
  
 Al principio planteé la calculadora como una única vista (`CalculatorView.vue`) que contenía tanto el estado como todo el marcado de los botones. Funcionaba, pero en cuanto añadí el conversor de divisas me di cuenta de un problema: el conversor necesitaba leer el mismo valor que se mostraba en la pantalla de la calculadora para poder convertirlo al vuelo, y ese valor vivía encerrado dentro del componente de la calculadora, inaccesible desde fuera.
@@ -58,6 +59,7 @@ Para la memoria (`M+`, `MR`, `MC`) se usa un store de Pinia (`stores/memory.js`)
 - Deberá estar integrado en la calculadora
 - Divisas a utilizar: `euro (€)`, `dólar ($)` y `yen (¥)`
 - Se deberá utilizar la siguiente API: [currencyfreaks.com](https://currencyfreaks.com/)
+
 ### Desarrollo
  
 Siguiendo la misma separación de capas que en la calculadora:
@@ -82,6 +84,7 @@ Un detalle que tuve que resolver: la tasa que devuelve currencyfreaks usa el dó
 - Se deberá utilizar la siguiente API: [el-tiempo.net/api](https://www.el-tiempo.net/api)
 - Mostrar una imagen en función del `stateSky`
 - Se puede elegir entre la información nacional o de una provincia (Asturias)
+
 ### Desarrollo
  
 La documentación pública de la API no detalla los valores exactos que puede tomar `stateSky`, así que antes de escribir ningún código inspeccioné la respuesta real con Postman contra los endpoints:
