@@ -15,7 +15,7 @@
     <div class="container py-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="mb-0">Weather</h4>
-            <select class="form-select w-auto" v-model="scope" @change="setScope(scope)">
+            <select class="form-select w-auto" v-model="scope" @change="setScope(scope)" data-testid="weather-scope">
                 <option value="nacional">National</option>
                 <option value="asturias">Asturias</option>
             </select>

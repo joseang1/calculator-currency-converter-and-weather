@@ -89,10 +89,10 @@
     <div class="offcanvas-body">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/" @click="closeOffcanvas">Calculator</RouterLink>
+          <RouterLink class="nav-link" to="/" @click="closeOffcanvas" data-testid="offcanvas-nav-calculator">Calculator</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/weather" @click="closeOffCanvas">Weather</RouterLink>
+          <RouterLink class="nav-link" to="/weather" @click="closeOffcanvas" data-testid="offcanvas-nav-weather">Weather</RouterLink>
         </li>
       </ul>
     </div>

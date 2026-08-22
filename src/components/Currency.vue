@@ -36,7 +36,7 @@
 
             <div class="row g-2 align-items-center">
                 <div class="col-4">
-                    <select v-model="from" class="form-select">
+                    <select v-model="from" class="form-select" data-testid="currency-from">
                         <option value="EUR">€ EUR</option>
                         <option value="USD">$ USD</option>
                         <option value="JPY">¥ JPY</option>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-4 text-center">→</div>
                 <div class="col-4">
-                    <select class="form-select" v-model="to">
+                    <select class="form-select" v-model="to" data-testid="currency-to">
                         <option value="EUR">€ EUR</option>
                         <option value="USD">$ USD</option>
                         <option value="JPY">¥ JPY</option>
@@ -52,7 +52,9 @@
                 </div>
             </div>
 
-            <div class="mt-2 fw-bold" v-if="result !== null">{{ display }} {{ from }} = {{ result.toFixed(2) }} {{ to }}</div>
+            <div class="mt-2 fw-bold" v-if="result !== null" data-testid="currency-result">
+                {{ display }} {{ from }} = {{ result.toFixed(2) }} {{ to }}
+            </div>
         </div>
     </div>
 
