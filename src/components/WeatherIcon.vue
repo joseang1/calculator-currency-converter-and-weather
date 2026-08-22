@@ -3,7 +3,7 @@
     import { computed } from 'vue'
 
     const props = defineProps({
-        stateSky: { type: String, default: ({}) }
+        stateSky: { type: Object, default: () => ({}) }
     })
 
     const iconMap = {
@@ -28,3 +28,7 @@
     })
 
 </script>
+
+<template>
+  <i :class="['bi', iconClass]" :title="stateSky?.description" style="font-size: 2.5rem;"></i>
+</template>

@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173
   },
   test: {
-    enviroment: 'happy-dom',
+    environment: 'happy-dom',
     globals: true,
     include: ['tests/unit/**/*.spec.js']
   }
