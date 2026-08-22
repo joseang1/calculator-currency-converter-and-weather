@@ -9,7 +9,7 @@
     <div class="container d-flex justify-content-center mt-5">
         <div class="card shadow-lg" style="max-width: 360px; width: 100%;">
             <div class="card-body bg-dark text-white rounded">
-                <div class="bg-black text-white text-end p-3 mb-3 rounded fs-2 text-truncate">
+                <div class="bg-black text-white text-end p-3 mb-3 rounded fs-2 text-truncate" data-testid="calculator-display">
                     {{ display }}
                 </div>
 
