@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  base: '/calculator-currency-converter-and-weather/',
   plugins: [vue()],
   server: {
     port: 5173
